@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div style="width: 80%;margin: 0 auto">
+        {% if results %}<h3 >{{ msg }}</h3>
+            {% for result in results %}
+                <div class="col-lg-3 col-xs-6" style="padding: 10px"><img src="{{ url_for('static',filename=result.photo) }}" alt=""
+                                           style="width:220px; height:330px">
+                    <br>{{ result.name }}
+                </div>
+            {% endfor %}
+        {% else %}<h3>{{ msg }}</h3>
+            <div style="margin-top: 10rem;font-size: large"><a href={{ url_for('purchase') }}>填写申购单</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

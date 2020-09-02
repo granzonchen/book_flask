@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div style="width:60%;margin: 0 auto">
+        <h4 style="margin-left: 10rem;text-align: left">添加图书</h4>
+        <form action="{{ url_for('addbook') }}" method="post" enctype="multipart/form-data">
+            <div>
+                <div class="col-lg-7" style="padding: 20px;height: 264px">
+                    <ul>
+                        <li>
+                            <label>名称 ：<input type="text" placeholder="请输入名称" name="name"
+                                              style="width: 46rem;height: 4rem;border-radius:5px;border: 2px solid orange" required></label>
+                        </li>
+                        <li>
+                            <label>作者 ：<input type="text" placeholder="请输入作者" name="author"
+                                              style="width: 46rem;height: 4rem;border-radius:5px ;border: 2px solid orange" required></label>
+                        </li>
+                        <li>
+                            <label>出版社 ：<input type="text" placeholder="请输入出版社" name="publish"
+                                               style="width: 46rem;height: 4rem;border-radius:5px ;border: 2px solid orange"></label>
+                        </li>
+                        <li>
+                            <label>ISBN ：<input type="text" placeholder="请输入ISBN号" name="isbn"
+                                                style="width: 46rem;height: 4rem;border-radius:5px;border: 2px solid orange"></label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="btnWrap" ></div>
+                    <input class="file" type="file" title="上传图片" name="photo" style="margin-left: 15px">
+                    {#                    <div class="upload ts"></div>#}
+                </div>
+                <div class="col-lg-12" style="margin: 10px auto;">
+                    <button type="submit" class="btn btn-primary" style="width: 12rem;height: 3.5rem">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

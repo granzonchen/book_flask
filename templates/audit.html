@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div style="width:80%;margin: 0 auto">
+        <h3><span style="text-align: left">审批申购列表</span></h3>
+        <table class="table table-responsive table-bordered">
+            <thead style="background-color: #1b6d85">
+            <tr>
+                <td>名称</td>
+                <td>作者</td>
+                <td>出版社</td>
+                <td>ISBN</td>
+                <td>图片</td>
+                <td>审批</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in book_list %}
+                <tr>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publish }}</td>
+                    <td>{{ book.ISBN }}</td>
+                    <td><a href="{{ url_for('static',filename=book.photo) }}">查看</a></td>
+                    <td><a href="{{ url_for('static',filename=book.photo) }}">同意</a> <a
+                            href="{{ url_for('static',filename=book.photo) }}">拒绝</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

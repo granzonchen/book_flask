@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if user %}
+        <div><h3>《{{ name }}》已经添加。</h3></div>
+        <div style="font-size: large"><a href="{{ url_for('audit',user=user) }}">显示审批申购列表</a></div>
+    {% else %}
+        <div><h3>你的《{{ name }}》申购单已经提交。</h3></div>
+        <div style="font-size: large"><a href="{{ url_for('list_book') }}">显示申购列表</a></div>
+    {% endif %}
+
+{% endblock %}

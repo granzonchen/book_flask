@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div style="width:80%;margin: 0 auto">
+        {% if user %}
+            <h3><span style="text-align: left">图书列表</span>
+                <span style="text-align: right">
+            <a href="{{ url_for('addbook',user=user) }}">添加</a></span></h3>
+        {% else %}
+            <h3><span style="text-align: left">图书申购列表</span></h3>
+        {% endif %}
+        <table class="table table-bordered table-responsive" >
+            <thead style="background-color: #1b6d85">
+            <tr>
+                <td>名称</td>
+                <td>作者</td>
+                <td>出版社</td>
+                <td>ISBN</td>
+                <td>图片</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in book_list %}
+                <tr>
+                    <td>{{ book.name }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.publish }}</td>
+                    <td>{{ book.ISBN }}</td>
+                    <td><a href="{{ url_for('static',filename=book.photo) }}">查看</a></td>
+                    {#                <td><img src="../static/upload/{{ book.photo }}" alt=""></td>#}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

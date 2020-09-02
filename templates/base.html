@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="referrer" content="no-referrer">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bookcss.css') }}">
+</head>
+
+<body>
+<header class="header tcenter">
+    <h1>图书管理系统</h1>
+
+</header>
+<div class="container text-center col-lg-12">
+    {% block content %}{% endblock %}
+</div>
+<footer class="footer col-xs-12 col-lg-12">
+    <div class="tcenter" style="margin: 0 auto;width: 100rem">Copyright &copy; 2019 Feitas 技术部</div>
+</footer>
+</body>
+
+</html>
